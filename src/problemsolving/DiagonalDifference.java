@@ -3,27 +3,27 @@ package problemsolving;
 import java.io.*;
 import java.util.stream.*;
 
-class Result {
+public class DiagonalDifference {
+    static class Result {
 
-    /*
-     * Complete the 'diagonalDifference' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts 2D_INTEGER_ARRAY arr as parameter.
-     */
+        /*
+         * Complete the 'diagonalDifference' function below.
+         *
+         * The function is expected to return an INTEGER.
+         * The function accepts 2D_INTEGER_ARRAY arr as parameter.
+         */
 
-    public static int diagonalDifference(Integer[][] arr) {
-        int dp = 0, ds = 0;
-        for(int i = 0; i < arr.length; i++){
-            dp += arr[i][i];
-            ds += arr[i][arr.length-i-1];
+        public static int diagonalDifference(Integer[][] arr) {
+            int dp = 0, ds = 0;
+            for(int i = 0; i < arr.length; i++){
+                dp += arr[i][i];
+                ds += arr[i][arr.length-i-1];
+            }
+            return Math.abs(dp-ds);
         }
-        return Math.abs(dp-ds);
+
     }
 
-}
-
-public class DiagonalDifference {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
